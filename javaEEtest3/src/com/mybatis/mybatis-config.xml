@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    
+    
+	 <mappers><!-- 映射器，告诉 MyBatis到哪里去找映射文件-->
+        <mapper resource="com/mybatis/admin/adminlogin.xml"/>
+        <mapper resource="com/mybatis/admin/AdminUser.xml"/>
+          <mapper resource="com/mybatis/admin/AdminMoney.xml"/>
+         <mapper resource="com/mybatis/before/beforelogin.xml"/>
+           <mapper resource="com/mybatis/before/comment.xml"/>
+           <mapper resource="com/mybatis/before/reallymoney.xml"/>
+           <mapper resource="com/mybatis/before/reallyupload.xml"/>
+            <mapper resource="com/mybatis/before/download.xml"/>
+            <mapper resource="com/mybatis/before/registerinit.xml"/>
+            
+          
+ 	</mappers>
+</configuration>
+

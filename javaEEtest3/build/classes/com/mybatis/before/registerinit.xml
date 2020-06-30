@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.before.registerinitDao ">
+	
+    <!-- <insert id="initreallyupload"  parameterType="com.po.before.RegisterInit">
+	     insert into reallyupload (uprovidename,filename,filepath,offer,adescription)
+		 values (#{uprovidename},#{filename},#{filepath},#{offer},#{adescription})
+	
+	</insert> -->
+	
+	
+	<select id="initreallyupload"  parameterType="com.po.before.Registerinit">
+	    select * from reallyupload
+	</select>
+	
+	<select id="test"   parameterType="String">
+	    select * from reallyupload
+	</select>
+		
+</mapper>

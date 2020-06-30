@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- com.dao.UserDao对应Dao接口 -->
+<mapper namespace="com.dao.admin.adminlogindao">
+	<!-- 查询用户信息 -->
+	<select id="checkadmin"  resultType="String" parameterType="String">
+		select adminPassword from adminlogin where 1=1
+		 <if test="_parameter != null">
+			and adminName like concat('%',#{adminName},'%')
+		</if>
+	</select>
+</mapper>

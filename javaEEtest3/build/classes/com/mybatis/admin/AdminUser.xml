@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.admin.AdminUsesDao">
+	<!-- 查询商品 -->
+	<select id="selectuse"  resultType="com.po.before.MyUser">
+		select * from beforelogin
+	</select>
+	<!-- 分页查询商品 -->
+	<select id="selectAllusesByPage"  resultType="com.po.before.MyUser" parameterType="map">
+		select * from beforelogin order by uname limit #{startIndex}, #{perPageSize}
+	</select>
+	<!-- 添加商品 -->
+	<insert id="adduses" parameterType="com.po.before.MyUser">
+		insert into beforelogin (uname,upassword,utelephone,uemail) 
+		values (#{uname}, #{upassword}, #{utelephone}, #{uemail})
+	</insert>
+	<!-- 根据id查询一个商品 -->
+	<select id="selectGoodsById"  resultType="com.po.before.MyUser" parameterType="String">
+		select * from beforelogin where uname=#{uname}
+	</select>
+	
+	
+	
+	<!-- 修改一个商品 -->
+	<update id="updateuserById" parameterType="com.po.before.MyUser">
+    update beforelogin
+    set upassword = #{upassword},utelephone = #{utelephone},uemail = #{uemail}
+    where  uname = #{uname} 
+  </update>
+  
+  <delete id="deleteAGoods" parameterType="String">
+		delete from beforelogin where uname=#{uname}
+	</delete>
+</mapper>

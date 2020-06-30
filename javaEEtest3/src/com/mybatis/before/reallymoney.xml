@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.before.reallymoneyDao">
+	
+	
+	<insert id="Thandelmoney"  parameterType="com.po.before.reallymoney">
+		insert into money (uname,uemail,uprice,ulevel,uuse) values (#{uname},#{uemail},#{uprice},#{ulevel},#{uuse})
+	</insert>
+	
+<update id="updatemoneyname" parameterType="com.po.before.reallymoney">
+    update money
+    set uemail = #{uemail},uprice = #{uprice},ulevel = #{ulevel},uuse = #{uuse}
+    where  uname = #{uname} 
+  </update>
+  <select id="getmoneyname"  resultType="String" parameterType="com.po.before.reallymoney">
+		select uname from money  where 1=1 and uname = #{uname} 
+	</select>
+</mapper>
+<!-- select id="gettaocan"  resultType="String" parameterType="String"
+		select uuse from money where 1=1 and uname =  #{uname} -->

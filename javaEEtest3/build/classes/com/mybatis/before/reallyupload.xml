@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.before.reallyuploadDao">
+	
+	
+	<insert id="Treallyupload"  parameterType="com.po.before.reallyupload">
+		insert into reallyupload (uprovidename,filename,filepath,offer,adescription)
+		 values (#{uprovidename},#{filename},#{filepath},#{offer},#{adescription})
+	</insert>
+	<!-- select id="getcoin"  resultType="Integer" parameterType="String">
+		select offer from money where 1=1 and uprovidename = #{uprovidename} -->
+	<update id="updateupload" parameterType="com.po.before.reallyupload">
+    update reallyupload
+    set uploaduid = #{uploaduid},filename = #{filename},filepath = #{filepath},offer = #{offer},adescription = #{adescription}
+    where  uprovidename = #{uprovidename} 
+  </update>
+  <select id="getname"  resultType="String" parameterType="com.po.before.reallyupload">
+		select uprovidename from reallyupload  where 1=1 and uprovidename = #{uprovidename} 
+	</select>
+</mapper>

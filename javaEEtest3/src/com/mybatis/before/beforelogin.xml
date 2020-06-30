@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- com.dao.UserDao对应Dao接口 -->
+<mapper namespace="com.dao.before.UserDao">
+	
+	<select id="login"  resultType="com.po.before.MyUser" parameterType="com.po.before.MyUser">
+		select * from beforelogin where 1=1 and uname =  #{uname} and upassword = #{upassword}
+	</select>
+	<select id="loginusername"  resultType="String" parameterType="com.po.before.MyUser">
+		select uname from beforelogin where 1=1 and uname =  #{uname} 
+	</select>
+	<insert id="register" parameterType="com.po.before.MyUser">
+		insert into beforelogin (uname, upassword, utelephone,uemail) values (#{uname}, #{upassword}, #{utelephone},#{uemail})
+	</insert>
+</mapper>
+
+
